@@ -12,10 +12,12 @@ public class Main {
         application.confirmProcessing();
 
         //Chain of Responsibility
+
         Chain chainCalc1 = new AdviserSign();
         Chain chainCalc2 = new CollegeSecSign();
         Chain chainCalc3 = new DeanSign();
 
+        //setting the chain
         chainCalc1.setNextChain(chainCalc2);
         chainCalc2.setNextChain(chainCalc3);
 

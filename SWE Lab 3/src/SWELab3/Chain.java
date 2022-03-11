@@ -3,6 +3,7 @@ package SWELab3;
 
 public interface Chain {
 
-    public void setNextChain(Chain nextChain);
-    public void sign(Signature request);
+    //chain functions for chain of responsibility
+    void setNextChain(Chain nextChain);
+    void sign(Signature request);
 }
