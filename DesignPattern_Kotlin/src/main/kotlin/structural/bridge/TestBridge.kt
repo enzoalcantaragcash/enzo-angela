@@ -8,13 +8,13 @@ class TestBridge {
     fun checkMacbookCheapKeyboardOutput() {
         val macbookWithCheapKeyboard = Macbook(CheapKeyboard())
         val expected = "cheap keyboard"
-        assertEquals(expected, macbookWithCheapKeyboard.printToScreen().toString())
+        assertEquals(expected, macbookWithCheapKeyboard.printToScreen())
     }
 
     @Test
     fun checkMacbookExpensiveKeyboardOutput() {
         val macbookWithExpensiveKeyboard = Macbook(ExpensiveKeyboard())
         val expected = "expensive keyboard"
-        assertEquals(expected, macbookWithExpensiveKeyboard.printToScreen().toString())
+        assertEquals(expected, macbookWithExpensiveKeyboard.printToScreen())
     }
 }

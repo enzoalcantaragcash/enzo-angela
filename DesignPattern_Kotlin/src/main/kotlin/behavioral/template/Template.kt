@@ -1,51 +1,51 @@
 package behavioral.template
 
 abstract class Game {
-    abstract fun initialize()
-    abstract fun startPlay()
-    abstract fun endPlay()
+    abstract fun initialize(): String
+    abstract fun startPlay(): String
+    abstract fun endPlay(): String
     fun play() {
 
         //initialize game
-        initialize()
+        println(initialize())
 
         //start the game
-        startPlay()
+        println(startPlay())
 
         //end the game
-        endPlay()
+        println(endPlay())
     }
 }
 
 class Football : Game() {
-    override fun initialize() {
-        println("Football game initialized! Start Playing!")
+    override fun initialize(): String {
+        return "Football game initialized! Start Playing!"
     }
 
-    override fun startPlay() {
-        println("Football game started. Enjoy!")
+    override fun startPlay(): String {
+        return "Football game started. Enjoy!"
     }
 
-    override fun endPlay() {
-        println("Football game finished")
+    override fun endPlay(): String {
+        return "Football game finished"
     }
 }
 
 class Cricket : Game() {
-    override fun initialize() {
-        println("Cricket game initialized! Start Playing!")
+    override fun initialize(): String {
+        return "Cricket game initialized! Start Playing!"
     }
 
-    override fun startPlay() {
-        println("Cricket game started. Enjoy!")
+    override fun startPlay(): String {
+        return "Cricket game started. Enjoy!"
     }
 
-    override fun endPlay() {
-        println("Cricket game finished")
+    override fun endPlay(): String {
+        return "Cricket game finished"
     }
 }
 
-fun main(args: Array<String>t) {
+fun main(args: Array<String>) {
     var game: Game = Cricket()
     game.play()
     game = Football()

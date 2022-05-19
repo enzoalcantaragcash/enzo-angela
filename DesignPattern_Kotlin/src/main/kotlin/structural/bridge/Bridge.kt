@@ -30,27 +30,26 @@ abstract class Computer protected constructor(keyboard: Keyboard) {
         this.keyboard = keyboard
     }
 
-    abstract fun printToScreen()
+    abstract fun printToScreen(): String?
 }
 
 class CustomDesktop(keyboard: Keyboard?) : Computer(keyboard!!) {
-    override fun printToScreen() {
-        println(keyboard.getUserInput())
+    override fun printToScreen(): String? {
+       return keyboard.getUserInput()
     }
 }
 
 class Macbook(keyboard: Keyboard?) : Computer(keyboard!!) {
-    override fun printToScreen() {
-        println(keyboard.getUserInput())
+    override fun printToScreen(): String? {
+        return keyboard.getUserInput()
     }
 }
 
 
 fun main(args: Array<String>) {
     val macBook: Computer = Macbook(CheapKeyboard())
-    macBook.printToScreen()
+    println(macBook.printToScreen())
     val customDesktop: Computer = CustomDesktop(ExpensiveKeyboard())
-    customDesktop.printToScreen()
-
+    println(customDesktop.printToScreen())
 }
 
