@@ -16,6 +16,10 @@ dependencies {
     implementation("junit:junit:4.13.1")
     implementation("junit:junit:4.13.1")
     testImplementation(kotlin("test"))
+
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    implementation("org.apache.commons:commons-lang3:3.4")
+
 }
 
 tasks.test {

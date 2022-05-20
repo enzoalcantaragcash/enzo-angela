@@ -6,14 +6,16 @@ import org.junit.Assert.*
 class TestFactory {
 
     @Test
-    fun checkCarRented() {
+    fun checkCarRentedIfMercedes_ExpectEqual() {
         val rentMercedes = CarFactory().rentACar(Car.Brand.MERCEDES)
-        val expectedMercedes = "Mercedes"
-        assertEquals(expectedMercedes, rentMercedes!!.brand)
+        assertEquals("Mercedes", rentMercedes!!.brand)
+    }
+
+    @Test
+    fun checkCarRentedIfAudi_ExpectEqual() {
 
         val rentAudi = CarFactory().rentACar(Car.Brand.AUDI)
-        val expectedAudi = "Audi"
-        assertEquals(expectedAudi, rentAudi!!.brand)
+        assertEquals("Audi", rentAudi!!.brand)
     }
 
 
