@@ -1,6 +1,8 @@
 package structural.bridge
 
-import org.junit.Assert
+import behavioral.mediator.ChatRoom
+import java.util.logging.Logger
+
 
 interface Keyboard {
     fun getUserInput(): String?
@@ -8,7 +10,6 @@ interface Keyboard {
 
 class CheapKeyboard : Keyboard {
     override fun getUserInput(): String? {
-//        return null
         return "cheap keyboard"
     }
 
@@ -16,7 +17,6 @@ class CheapKeyboard : Keyboard {
 
 class ExpensiveKeyboard : Keyboard {
     override fun getUserInput(): String? {
-//        return null
         return "expensive keyboard"
     }
 
@@ -47,9 +47,11 @@ class Macbook(keyboard: Keyboard?) : Computer(keyboard!!) {
 
 
 fun main(args: Array<String>) {
+    val logger = Logger.getLogger(ChatRoom::class.java.getName())
+
     val macBook: Computer = Macbook(CheapKeyboard())
-    println(macBook.printToScreen())
+    logger.info(macBook.printToScreen())
     val customDesktop: Computer = CustomDesktop(ExpensiveKeyboard())
-    println(customDesktop.printToScreen())
+    logger.info(customDesktop.printToScreen())
 }
 

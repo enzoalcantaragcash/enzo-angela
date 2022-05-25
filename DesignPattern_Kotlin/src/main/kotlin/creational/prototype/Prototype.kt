@@ -1,6 +1,7 @@
 package creational.prototype
 
-private val organizationCache = HashMap<String, Organization>()
+import behavioral.mediator.ChatRoom
+import java.util.logging.Logger
 
 open class Organization : Cloneable {
     var id : Int = -1
@@ -23,6 +24,10 @@ class Community : Organization()
 class Company : Organization()
 
 fun main(args: Array<String>) {
+
+    val organizationCache = HashMap<String, Organization>()
+    val logger = Logger.getLogger(ChatRoom::class.java.getName())
+
     var org: Organization = Community()
     org.name = "PADC"
     org.id = 1
@@ -36,6 +41,6 @@ fun main(args: Array<String>) {
 
     organizationCache[org.name] = org
     val company = organizationCache["Sea"]!!.clone() as Company
-    println(company.name + company.address)
-    println(organizationCache["Sea"].toString())
+    logger.info(company.name + company.address)
+    logger.info(organizationCache["Sea"].toString())
 }

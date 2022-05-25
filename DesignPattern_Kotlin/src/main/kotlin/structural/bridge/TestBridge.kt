@@ -17,4 +17,18 @@ class TestBridge {
         val expected = "expensive keyboard"
         assertEquals(expected, macbookWithExpensiveKeyboard.printToScreen())
     }
+
+    @Test
+    fun checkCustomDesktopCheapKeyboardOutput() {
+        val customDesktopWithCheapKeyboard = CustomDesktop(CheapKeyboard())
+        val expected = "cheap keyboard"
+        assertEquals(expected, customDesktopWithCheapKeyboard.printToScreen())
+    }
+
+    @Test
+    fun checkCustomDesktopExpensiveKeyboardOutput() {
+        val customDesktopWithExpensiveKeyboard = CustomDesktop(ExpensiveKeyboard())
+        val expected = "expensive keyboard"
+        assertEquals(expected, customDesktopWithExpensiveKeyboard.printToScreen())
+    }
 }

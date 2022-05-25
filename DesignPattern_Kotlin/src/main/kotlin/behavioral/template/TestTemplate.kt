@@ -14,9 +14,23 @@ class TestTemplate {
     }
 
     @Test
-    fun checkDifferentImplementation() {
+    fun checkDifferentImplementationOfInitialize() {
         val gameA = Cricket()
         val gameB = Football()
         assertFalse(gameA.initialize() == gameB.initialize())
+    }
+
+    @Test
+    fun checkDifferentImplementationOfStartPlay() {
+        val gameA = Cricket()
+        val gameB = Football()
+        assertFalse(gameA.startPlay() == gameB.startPlay())
+    }
+
+    @Test
+    fun checkDifferentImplementationOfEndPlay() {
+        val gameA = Cricket()
+        val gameB = Football()
+        assertFalse(gameA.endPlay() == gameB.endPlay())
     }
 }

@@ -1,19 +1,26 @@
 package behavioral.template
 
+import behavioral.mediator.ChatRoom
+import java.util.logging.Logger
+
+
+
 abstract class Game {
+    private val logger = Logger.getLogger(ChatRoom::class.java.getName())
+
     abstract fun initialize(): String
     abstract fun startPlay(): String
     abstract fun endPlay(): String
     fun play() {
 
         //initialize game
-        println(initialize())
+        logger.info(initialize())
 
         //start the game
-        println(startPlay())
+        logger.info(startPlay())
 
         //end the game
-        println(endPlay())
+        logger.info(endPlay())
     }
 }
 
