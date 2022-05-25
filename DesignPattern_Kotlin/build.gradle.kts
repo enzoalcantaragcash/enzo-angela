@@ -15,6 +15,7 @@ repositories {
 dependencies {
     implementation("junit:junit:4.13.1")
     implementation("junit:junit:4.13.1")
+    implementation ("io.github.microutils:kotlin-logging-jvm:2.1.20")
     testImplementation(kotlin("test"))
 
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3

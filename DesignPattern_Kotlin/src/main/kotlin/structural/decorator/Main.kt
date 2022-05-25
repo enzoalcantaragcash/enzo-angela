@@ -1,9 +1,11 @@
 package structural.decorator
 
-fun main () {
+import java.util.logging.Logger
 
+fun main() {
 
-    val baconAndMushroom = VeggieTopping(MeatTopping(BasePizza("Bacon and Mushroom"), "Bacon"), "Mushroom")
-    println(baconAndMushroom.makePizza())
+        val logger = Logger.getLogger(BasePizza::class.java.getName())
+        val baconAndMushroom = VeggieTopping(MeatTopping(BasePizza("Bacon and Mushroom"), "Bacon"), "Mushroom")
+        logger.info(baconAndMushroom.makePizza())
 
-}
+    }
