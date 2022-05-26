@@ -7,26 +7,26 @@ import org.junit.Assert.*
 class TestPizza {
 
     @Test
-    fun checkValidPizzaName_ExpectTrue() {
-        val baconAndMushroom = VeggieTopping(MeatTopping(BasePizza("Bacon and Mushroom"), "Bacon"), "Mushroom")
-        assertTrue(PizzaOrderChecker().checkPizzaType(baconAndMushroom.makePizza(), "Bacon and Mushroom"))
+    fun checkValidPBasePizza_ExpectTrue() {
+        val baconAndMushroom = VeggieTopping(MeatTopping(BasePizza(), "Bacon"), "Mushroom")
+        assertTrue(PizzaOrderChecker().checkPizzaBase(baconAndMushroom.makePizza(), "Cheese and Tomato Sauce"))
     }
 
     @Test
     fun checkInvalidPizzaName_ExpectFalse() {
-        val baconAndMushroom = VeggieTopping(MeatTopping(BasePizza("Bacon and Mushroom"), "Bacon"), "Mushroom")
-        assertFalse(PizzaOrderChecker().checkPizzaType(baconAndMushroom.makePizza(), "Hawaiian"))
+        val baconAndMushroom = VeggieTopping(MeatTopping(BasePizza(), "Bacon"), "Mushroom")
+        assertFalse(PizzaOrderChecker().checkPizzaBase(baconAndMushroom.makePizza(), "Hawaiian"))
     }
 
     @Test
     fun checkValidPizzaIngredients_ExpectTrue() {
-        val baconAndMushroom = VeggieTopping(MeatTopping(BasePizza("Bacon and Mushroom"), "Bacon"), "Mushroom")
+        val baconAndMushroom = VeggieTopping(MeatTopping(BasePizza(), "Bacon"), "Mushroom")
         assertTrue(PizzaOrderChecker().checkPizzaIngredients(baconAndMushroom.makePizza(), "Bacon Mushroom"))
     }
 
     @Test
     fun checkInvalidPizzaIngredients_ExpectFalse() {
-        val baconAndMushroom = VeggieTopping(MeatTopping(BasePizza("Bacon and Mushroom"), "Bacon"), "Mushroom")
+        val baconAndMushroom = VeggieTopping(MeatTopping(BasePizza(), "Bacon"), "Mushroom")
         assertFalse(PizzaOrderChecker().checkPizzaIngredients(baconAndMushroom.makePizza(), "Bacon Mushroom Potatoes"))
     }
 }

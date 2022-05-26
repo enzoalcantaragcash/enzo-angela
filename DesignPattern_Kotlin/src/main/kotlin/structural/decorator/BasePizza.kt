@@ -1,8 +1,8 @@
 package structural.decorator
 
-class BasePizza (private val pizzaType: String) : Pizza {
+class BasePizza () : Pizza {
     override fun makePizza(): String {
-        return "$pizzaType : "
+        return "Cheese and Tomato Sauce : "
     }
 
 }

@@ -2,14 +2,14 @@ package structural.decorator
 
 class PizzaOrderChecker {
 
-    fun checkPizzaType(pizzaString : String, expectedPizzaName: String) : Boolean{
+    fun checkPizzaBase(pizzaString : String, expectedPizzaBase: String) : Boolean{
 
         if(pizzaString.split(":").size != 2) {
             return false
         }
 
-        var pizzaName = pizzaString.split(":")[0].trim()
-        if (expectedPizzaName.equals(pizzaName)) {
+        var pizzaBase = pizzaString.split(":")[0].trim()
+        if (expectedPizzaBase.equals(pizzaBase)) {
             return true
         }
         return false
