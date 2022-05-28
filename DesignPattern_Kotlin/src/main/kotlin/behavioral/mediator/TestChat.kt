@@ -37,4 +37,9 @@ class TestChat {
     fun checkUserDifferent_ExpectFalse() {
         assertFalse(ChatChecker().checkUser(robert.sendMessage("Hello"), "Bob"))
     }
+
+    @Test
+    fun checkIfMessageIsEmpty_AssertTrue() {
+        assertTrue(ChatChecker().checkMessageEmpty(robert.sendMessage("")))
+    }
 }

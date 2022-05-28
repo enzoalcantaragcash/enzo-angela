@@ -18,6 +18,11 @@ class TestFactory {
         assertEquals("Audi", rentAudi!!.brand)
     }
 
+    @Test
+    fun checkCarRentedIfNull_ExpectEqual() {
+        assertNull(CarFactory().rentACar(Car.Brand.MITSUBISHI))
+    }
+
 
 
 }

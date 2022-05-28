@@ -5,7 +5,7 @@ import java.util.logging.Logger
 
 interface Car {
     val brand: String
-    enum class Brand {AUDI, MERCEDES}
+    enum class Brand {AUDI, MERCEDES, MITSUBISHI}
 }
 
 

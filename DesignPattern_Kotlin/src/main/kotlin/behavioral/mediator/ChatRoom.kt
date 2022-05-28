@@ -10,7 +10,8 @@ class ChatRoom {
 
     companion object {
         fun showMessage(user: User, message: String) : String {
-
+            if (message.isEmpty())
+                return ""
             val logger = Logger.getLogger(ChatRoom::class.java.getName())
             val current = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
             logger.info(current.toString() + " [" + user.name + "] : " + message)

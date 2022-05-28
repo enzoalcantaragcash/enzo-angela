@@ -28,6 +28,13 @@ class ChatChecker {
         return false
     }
 
+    fun checkMessageEmpty(message:String) : Boolean {
+        if(message.isEmpty()) {
+            return true
+        }
+        return false
+    }
+
     fun checkUser(message: String, expectedUser:String) : Boolean{
         var user = StringUtils.substringBetween(message, "[", "]")
         if(user.equals(expectedUser)) {
